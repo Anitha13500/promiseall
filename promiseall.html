@@ -57,7 +57,42 @@
 			})
 			
 			
+			<!-- promise all -->
+			let prom= new Promise(function(resolve,reject){
+				resolve("sus");
+			});
+	   
+			let prom1= new Promise(function(		resolve,reject){
+				resolve("sus1");
+			});
+	   
+			Promise.all([prom,prom1])
+			.then(function (sucess){
+				console.log("suce",sucess);
+			})
+			.catch(function (error){
+				console.log("err",error);
+			});
 			
+			  <!-- async await -->
+			let promi= new Promise(function(			resolve,reject){
+				resolve("sucs");
+			});
+	   
+			let promi1= new Promise(function(		 resolve,reject){
+				resolve("sucs1");
+			});
+			async function Parent(){
+			try{
+			var sucs=await promi;
+			var sucs1=await promi1;
+	    
+			console.log("res",sucs,sucs1);
+			}  catch(err){
+				console.log("error");
+			 }
+			 }
+			Parent()
 	  </script>
 </body>
 </html>
